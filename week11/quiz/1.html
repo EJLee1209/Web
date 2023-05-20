@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>확인 창을 이용한 예시</title>
+    <script>
+      function changeBackground() {
+        var confirmation = confirm('문서가 로드되었습니다.');
+        if (confirmation == true) {
+          document.body.style.backgroundColor = 'red';
+        }
+      }
+
+      window.onload = function () {
+        changeBackground();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

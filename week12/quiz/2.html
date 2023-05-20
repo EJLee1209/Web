@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>치매 예방 프로그램</title>
+    <script>
+      var correctAnswer = [30, 22, 46, 28];
+      function checkAnswer() {
+        var score = 0;
+        var answers = document.getElementsByClassName('answer');
+        var question = document.getElementsByClassName('question');
+        var result = document.getElementById('score');
+        for (var i = 0; i < answers.length; i++) {
+          if (answers[i].value == '' || isNaN(answers[i].value)) {
+            question[i].style.textDecoration = 'line-through';
+          } else if (parseInt(answers[i].value) != correctAnswer[i]) {
+            question[i].style.textDecoration = 'line-through';
+          } else {
+            score += 10;
+          }
+        }
+        if (score >= 30) {
+          result.innerText = score + '점 : 합격하셨습니다';
+        } else {
+          result.innerText = score + '점';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>치매 예방 프로그램</h2>
+    <hr />
+    <table>
+      <tr><td><span class="question">5*6</span></td>
+        <td> <input class="answer" type="text" /></td>
+      </tr>
+      <tr>
+        <td><span class="question">7+5*3</span></td>
+        <td><input class="answer" type="text" /></td>
+      </tr>
+      <tr>
+        <td><span class="question">23*2</span></td>
+        <td><input class="answer" type="text" /></td>
+      </tr>
+      <tr>
+        <td><span class="question">35-7</span></td>
+        <td><input class="answer" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+          <input id="checkButton" type="button" value="채점" onclick="checkAnswer()"/>
+        </td>
+        <td> <span id="score">0점</span> </td>
+      </tr>
+    </table>
+  </body>
+</html>

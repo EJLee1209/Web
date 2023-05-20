@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>while 문</title>
+</head>
+
+<body>
+  <h3>기호로 표시된 border</h3>
+  <hr>
+  <script>
+    var row = parseInt(prompt("출력할 행 수를 입력하세요.", 1))
+    var mark = prompt("연속적으로 기호를 4개 입력하세요.", "ㄱㄴㄷㄹ")
+    
+    for(var i=0; i<row; i++){
+      for(var j=0; j<4; j++){
+        if(i==0){ // 첫행
+          document.write(mark[0])
+        } else if(i == row-1){ // 마지막 행
+          document.write(mark[mark.length-1])
+        }
+        else { // 중간행
+          if(j != 0 && j != mark.length-1) { // 중간의 중간
+            document.write("&nbsp")
+          } else {
+            document.write(mark[j])
+          }
+        }
+      }
+      document.write("<br>")
+    }
+  </script>
+  
+</body>
+</html>

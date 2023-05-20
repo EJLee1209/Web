@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[실습 4]</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse : collapse;
+      border: 1.5px solid green;
+      border-right-color: white;
+      border-left-color: white;
+      align-content: center;
+    }
+    
+    th {
+      color: white;
+    }
+    tr.header_row {
+      background-color: green;
+    }
+    tr.table_content {
+      border: 1.5px solid green;
+      border-right-color: white;
+      border-left-color: white;
+    }
+    tr.table_content:hover {
+      background-color: brown;
+      color: white;
+    }
+    tr.table_content_second {
+      background-color: pink;
+    }
+    tr.table_content_second:hover {
+      background-color: brown;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  기말고사 성적 리스트
+  <table>
+    <tr class="header_row">
+      <th>학번</th>
+      <th>이름</th>
+      <th>성적</th>
+      <th>학점</th>
+    </tr>
+    <tr class="table_content">
+      <td>1</td>
+      <td>Bill</td>
+      <td>98</td>
+      <td>A+</td>
+    </tr>
+    <tr class="table_content_second">
+      <td>2</td>
+      <td>Steve</td>
+      <td>89</td>
+      <td>B+</td>
+    </tr>
+    <tr class="table_content">
+      <td>3</td>
+      <td>Larry</td>
+      <td>93</td>
+      <td>A-</td>
+    </tr>
+  </table>
+</body>
+</html>

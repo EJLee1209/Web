@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문제4</title>
+  </head>
+  <script>
+    function changeButtonColor(isClicked) {
+      var target = document.getElementById('button');
+      if (isClicked) {
+        target.style.backgroundColor = 'green';
+        target.style.color = 'white';
+      } else {
+        target.style.backgroundColor = 'lightgray';
+        target.style.color = 'black';
+      }
+    }
+  </script>
+  <style>
+    #button {
+      background-color: lightgray;
+    }
+  </style>
+  <body>
+    <input
+      id="button"
+      type="button"
+      value="버튼을 눌러보세요"
+      onmousedown="changeButtonColor(true)"
+      onmouseup="changeButtonColor(false)"
+    />
+  </body>
+</html>

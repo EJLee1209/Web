@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    
+    var arr=[10, 20.7, 30, 5.9, 7];
+
+    var result = arrayCalc(arr)
+
+    document.write("배열의 평균은  " + result +"<br>");
+
+    function arrayCalc(arr) {
+      const result = arr.reduce(function add(sum, currValue) {
+        return sum + currValue;
+      }, 0);
+      return result / arr.length
+    }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

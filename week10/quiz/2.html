@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문제2</title>
+    <script>
+      function changeLowerCase() {
+        var stringInput = document.getElementById('stringInput');
+        stringInput.value = stringInput.value.toLowerCase();
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      영문 문자열을 입력하세요 :
+      <input id="stringInput" type="text" onchange="changeLowerCase()" />
+    </div>
+    <br />
+    입력폼을 벗어나면 영문자가 모두 소문자로 변경됩니다
+  </body>
+</html>

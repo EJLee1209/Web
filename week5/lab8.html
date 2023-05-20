@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow 프로퍼티</title>
+</head>
+<style>
+  p {
+    width: 15em;
+    height: 3em;
+    border: 1px solid lightgray;
+  }
+  .hidden { overflow: hidden; }
+  .visible { overflow: visible; }
+  .scroll { overflow: scroll; }
+
+</style>
+<body>
+  <h3>overflow 프로퍼티</h3>
+  <hr>
+  <p class="hidden">
+    overflow에 hidden 값을 적용하면 박스를 넘어가는 내용이 잘려 보이지 않습니다.
+  </p> <br>
+  <p class="visible">
+    overflow에 visible 값을 적용하면 콘텐츠가 박스를 넘어가서도 출력됩니다.
+    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세
+  </p> <br>
+  <p class="scroll">
+    overflow에 scroll 값을 적용하면 박스에 스크롤바를 붙여 출력합니다.
+    무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세
+  </p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>evt_calculator</title>
+  </head>
+  <style>
+    .button {
+      width: 80px;
+      height: 30px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    #numberField {
+      width: 30%;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script>
+    function inputNumberField(v) {
+      var numberField = document.getElementById('numberField');
+      if (numberField.value == '0') {
+        numberField.value = v;
+      } else {
+        numberField.value += v;
+      }
+    }
+    function calculate() {
+      var numberField = document.getElementById('numberField');
+      numberField.value = eval(numberField.value);
+    }
+  </script>
+  <body>
+    <form>
+      display <input id="numberField" type="text" value="0" /> <br />
+      <div>
+        <input class="button" type="button" value="7" onclick="inputNumberField(7)"/>
+        <input class="button"  type="button" value="8" onclick="inputNumberField(8)" />
+        <input class="button"  type="button" value="9" onclick="inputNumberField(9)" />
+        <input class="button"  type="button" value="/" onclick="inputNumberField('/')"/>
+      </div>
+      <div>
+        <input class="button"  type="button" value="4" onclick="inputNumberField(4)" />
+        <input class="button"  type="button" value="5" onclick="inputNumberField(5)" />
+        <input class="button"  type="button" value="6" onclick="inputNumberField(6)" />
+        <input class="button"  type="button" value="*" onclick="inputNumberField('*')" />
+      </div>
+      <div>
+        <input class="button"  type="button" value="1" onclick="inputNumberField(1)" />
+        <input class="button"  type="button" value="2" onclick="inputNumberField(2)" />
+        <input class="button"  type="button" value="3" onclick="inputNumberField(3)" />
+        <input class="button"  type="button" value="-" onclick="inputNumberField('-')" />
+      </div>
+      <div>
+        <input class="button"  type="button" value="0" onclick="inputNumberField(0)" />
+        <input class="button"  type="button" value="+" onclick="inputNumberField('+')" />  
+      </div>
+      <div>
+        <input class="button"  type="reset" value="Clear" />
+        <input class="button"  type="button" value="Enter" onclick="calculate()"/> <br />
+      </div>
+    </form>
+  </body>
+</html>

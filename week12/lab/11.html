@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('tr:odd').css('background', 'red')
+      $('tr:even').css('background', 'yellow')
+      $('tr:first').css('background', '#000000').css('color','#FFFFFF')
+    })
+  </script>
+</head>
+<body>
+  <table>
+    <tr><th>이름</th><th>혈액형</th><th>지역</th></tr>
+    <tr><th>강민수</th><th>AB형</th><th>서울시 강남구</th></tr>
+    <tr><th>구지연</th><th>B형</th><th>강원도 춘천시</th></tr>
+    <tr><th>김미화</th><th>AB형</th><th>강원도 원주시</th></tr>
+    <tr><th>김선화</th><th>O형</th><th>서울시 송파구</th></tr>
+    <tr><th>남기주</th><th>A형</th><th>서울시 노량진구</th></tr>
+    <tr><th>윤하린</th><th>B형</th><th>서울시 강서구</th></tr>
+  </table>
+</body>
+</html>

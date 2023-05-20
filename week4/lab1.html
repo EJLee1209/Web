@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>hover 활용</title>
+  <style>
+    .card {
+      background-image: url('./assets/pocker_back.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 200px;
+      height: 280px;
+    }
+    .card:hover {
+      background-image: url('./assets/pocker_forward.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 200px;
+      height: 280px;
+    }
+  </style>
+</head>
+<body>
+  <h3>:hover 활용</h3>
+  <hr>
+  <p>마우스를 올리면 카드의 앞면이 보인다.</p>
+  <div class="card"></div>
+</body>
+</html>

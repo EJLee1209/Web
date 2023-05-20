@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문제1</title>
+    <script>
+      function changeColor(color) {
+        var frame = document.getElementById('frame');
+        frame.style.backgroundColor = color;
+      }
+    </script>
+  </head>
+  <body id="frame">
+    <input
+      type="radio"
+      id="red"
+      name="color"
+      value="red"
+      onchange="changeColor('red')"
+    />
+    <label for="red">빨강</label>
+    <input
+      type="radio"
+      id="yellow"
+      name="color"
+      value="yellow"
+      onchange="changeColor('yellow')"
+    />
+    <label for="yellow">노랑</label>
+    <input
+      type="radio"
+      id="blue"
+      name="color"
+      value="blue"
+      onchange="changeColor('blue')"
+    />
+    <label for="blue">파랑</label>
+  </body>
+</html>

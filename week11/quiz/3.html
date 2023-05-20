@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form_val_length</title>
+</head>
+<script>
+  function checkName() {
+    var nameField = document.getElementById('nameField')
+    var nameSize = nameField.value.length
+    if(nameSize>=6 && nameSize<=8){
+      return true
+    } else{
+      alert('6문자와 8문자 사이로 입력해주세요!')
+      return false
+    }
+    
+  }
+</script>
+<body>
+  <form onsubmit="checkName()">
+    <label for="nameField">이름(6-8문자): </label>
+    <input id="nameField" type="text">
+    <button type="submit">확인</button>
+  </form>
+</body>
+</html>

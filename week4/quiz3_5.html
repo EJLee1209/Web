@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[실습5] 테이블과 form 태그의 적용</title>
+</head>
+<body>
+  <h2>이메일 쓰기</h2>
+  <form>
+    <table>
+      <tr>
+        <th>아이디</th>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <th>비밀번호</th>
+        <td><input type="password"></td>
+      </tr>
+      <tr>
+        <th>이메일</th>
+        <td><input type="email"></td>
+      </tr>
+      <tr>
+        <th>휴대폰</th>
+        <td>
+          <select name="phone">
+            <option value="1">010</option>
+            <option value="1">011</option>
+            <option value="1">012</option>
+            <option value="1">013</option>
+            <option value="1">033</option>
+          </select>
+          -
+          <input type="text" size="6"> 
+          -
+          <input type="text" size="6"> 
+        </td>
+      </tr>
+
+      <tr>
+        <th rowspan="2">내용</th>
+        <td><textarea cols="30" rows="10">10행 30열의 크기</textarea></td>
+      </tr>
+
+      <tr>
+        <td>
+          <button type="reset">취소</button> &nbsp;&nbsp;
+          <button type="submit">전송</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>선택 입력</title>
+    <script>
+      function select() {
+        var selectElement = document.getElementById('options');
+        var selectedOption = selectElement.value;
+
+        if (selectedOption === 'option1') {
+          alert('과일을 선택해야합니다.');
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form name="myForm" onsubmit="return select()">
+      <label for="options">과일선택</label>
+      <select id="options" name="options">
+        <option value="option1">선택하세요</option>
+        <option value="option2">사과</option>
+        <option value="option3">배</option>
+        <option value="option4">바나나</option>
+      </select>
+      <button type="submit">확인</button>
+    </form>
+  </body>
+</html>

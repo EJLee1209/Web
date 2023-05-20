@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문제 1</title>
+</head>
+<script>
+  function bookToggle(obj, isOver) {
+    if(isOver){
+      obj.src = "../assets/book_open.png"
+    } else {
+      obj.src = "../assets/book_close.png"
+    } 
+  }
+</script>
+<body>
+  <img 
+  src="../assets/book_close.png" alt="book_close" onmouseover="bookToggle(this, true)" onmouseout="bookToggle(this, false)">
+</body>
+</html>

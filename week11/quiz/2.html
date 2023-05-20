@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  function checkEmpty() {
+    var nameField = document.getElementById('nameField')
+    var name = nameField.value
+    if(name=="") {
+      alert('필드가 비어있네요!')
+      return false
+    } 
+    return true
+  }
+</script>
+<body>
+  <form onsubmit="checkEmpty()">
+    <label for="nameField">이름: </label>
+    <input id="nameField" type="text">
+    <button type="submit">확인</button>
+  </form>
+</body>
+</html>
