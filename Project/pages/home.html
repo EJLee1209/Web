@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- nav bar style -->
+    <link rel="stylesheet" type="text/css" href="../style/navStyle.css" />
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
   </head>
-  <!-- nav bar style -->
-  <link rel="stylesheet" type="text/css" href="../style/navStyle.css" />
+
   <body>
     <nav id="navbar">
       <a href="./home.html">사이트 이름</a>
@@ -18,6 +15,53 @@
       </ul>
     </nav>
 
-    <h2>홈 화면</h2>
+    <div class="slider" id="slider">
+      <input type="radio" name="slide-radios" class="slide-radio" checked id="slide-radio-1">
+      <input type="radio" name="slide-radios" class="slide-radio" id="slide-radio-2">
+      <input type="radio" name="slide-radios" class="slide-radio" id="slide-radio-3">
+      <input type="radio" name="slide-radios" class="slide-radio" id="slide-radio-4">
+
+      <div class="pagination">
+        <label for="slide-radio-1"></label>
+        <label for="slide-radio-2"></label>
+        <label for="slide-radio-3"></label>
+        <label for="slide-radio-4"></label>
+      </div>
+
+      <div class="slide" id="slide-1">
+        <div class="slide-content">
+          <h1>Telescope</h1>
+          <h2>by ezwebpub</h2>
+          <a href="#">download</a>
+        </div>
+        <img src="../assets/image/dolphin.jpg" alt="" />
+      </div>
+      <div class="slide" id="slide-2">
+        <div class="slide-content">
+          <h1>Brushes</h1>
+          <h2>by ezwebpub</h2>
+          <a href="#">download</a>
+        </div>
+        <img src="../assets/image/industry.png" alt="" />
+      </div>
+      <div class="slide" id="slide-3">
+        <div class="slide-content">
+          <h1>Pumpkin</h1>
+          <h2>by ezwebpub</h2>
+          <a href="#">download</a>
+        </div>
+        <img src="../assets/image/icebear.jpg" alt="" />
+      </div>
+      <div class="slide" id="slide-4">
+        <div class="slide-content">
+          <h1>Man</h1>
+          <h2>by ezwebpub</h2>
+          <a href="#">download</a>
+        </div>
+        <img src="../assets/image/tree.jpg" alt="" />
+      </div>
+    </div>
+
+    <script src="../javascript/home.js"></script>
   </body>
 </html>
