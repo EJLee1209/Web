@@ -1,0 +1,25 @@
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script>
+    var default_width = 70
+    $(document).ready(function(){
+      $('.a').each(function(index){
+        width = default_width+(30*index)
+        $(this).css('width',width+"px")
+      })
+    })
+  </script>
+  <style>
+    .a{
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <h3>Web Programming !</h3> <hr>
+  <p class="a">HTML5</p>
+  <p class="a">CSS3</p>
+  <p class="a">자바스크립트</p>
+</body>
+</html>

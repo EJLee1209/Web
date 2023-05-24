@@ -1,10 +1,191 @@
+<!-- 봉사활동 페이지 -->
 <html>
   <head>
-    <title>Document</title>
+    <title>봉사활동 찾기</title>
     <link rel="stylesheet" type="text/css" href="../style/navStyle.css" />
-    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+    <style>
+      body{
+        color: black;
+        text-align: center;
+      }
+
+      h2 {
+        padding-top: 100px;
+      }
+
+      .bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.5;
+      }
+
+      .bg-video__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      #volunteer_navbar {
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      #volunteer_navbar ul li {
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 30px;
+        font-size: 20px;
+      }
+
+      .volunteer-nav-item:hover {
+        border-bottom: 3px solid black;
+      }
+
+      .volunteer-content-item-box {
+        border: 1px solid black;
+        border-radius: 30px;
+        margin: 10px;
+        float: left;
+        width: 300px;
+        box-shadow: 3px 3px 3px #666;
+      }
+      .volunteer-content-item-box>div {
+        text-align: start;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        color: black;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+      .volunteer-content-item-thumbnail {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        height: 200px;
+      }
+      .volunteer-content-item-title {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      .volunteer-content-item-content {
+        font-size: 15px;
+      }
+
+      #volunteer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .volunteer-content-item {
+        flex-basis: calc(30% - 20px); /* 20px은 간격과 여백을 나타냅니다. */
+        width: 300px;
+        margin: 10px;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .volunteer-content-item-box:hover {
+        box-shadow: 0px 0px 0px white;
+      }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+      var all = [
+        {title: "테스트1", description: "설명1", image: "../assets/image/icebear.jpg"},
+        {title: "테스트2", description: "설명2", image: "../assets/image/sea.jpg"},
+        {title: "테스트3", description: "설명3", image: "../assets/image/industry.png"},
+        {title: "테스트4", description: "설명4", image: "../assets/image/childrens.jpg"},
+        {title: "테스트5", description: "설명5", image: "../assets/image/sea.jpg"},
+        {title: "테스트6", description: "설명6", image: "../assets/image/icebear.jpg"},
+        {title: "테스트7", description: "설명7", image: "../assets/image/industry.png"},
+        {title: "테스트8", description: "설명8", image: "../assets/image/sea.jpg"},
+        {title: "테스트9", description: "설명9", image: "../assets/image/childrens.jpg"},
+        {title: "테스트10", description: "설명10", image: "../assets/image/icebear.jpg"},
+      ]
+
+      var domestic = [
+        {title: "테스트11", description: "설명1", image: "../assets/image/icebear.jpg"},
+        {title: "테스트12", description: "설명2", image: "../assets/image/sea.jpg"},
+        {title: "테스트13", description: "설명3", image: "../assets/image/industry.png"},
+        {title: "테스트14", description: "설명4", image: "../assets/image/childrens.jpg"},
+        {title: "테스트15", description: "설명5", image: "../assets/image/sea.jpg"},
+        {title: "테스트16", description: "설명6", image: "../assets/image/icebear.jpg"},
+        {title: "테스트17", description: "설명7", image: "../assets/image/industry.png"},
+        {title: "테스트18", description: "설명8", image: "../assets/image/sea.jpg"},
+        {title: "테스트19", description: "설명9", image: "../assets/image/childrens.jpg"},
+        {title: "테스트20", description: "설명10", image: "../assets/image/icebear.jpg"},
+      ]      
+      var foreign = [
+        {title: "테스트21", description: "설명1", image: "../assets/image/icebear.jpg"},
+        {title: "테스트22", description: "설명2", image: "../assets/image/sea.jpg"},
+        {title: "테스트23", description: "설명3", image: "../assets/image/industry.png"},
+        {title: "테스트24", description: "설명4", image: "../assets/image/childrens.jpg"},
+        {title: "테스트25", description: "설명5", image: "../assets/image/sea.jpg"},
+        {title: "테스트26", description: "설명6", image: "../assets/image/icebear.jpg"},
+        {title: "테스트27", description: "설명7", image: "../assets/image/industry.png"},
+        {title: "테스트28", description: "설명8", image: "../assets/image/sea.jpg"},
+        {title: "테스트29", description: "설명9", image: "../assets/image/childrens.jpg"},
+        {title: "테스트30", description: "설명10", image: "../assets/image/icebear.jpg"},
+      ]
+
+      $(document).ready(function(){
+        all.forEach(function(obj){
+          $('#volunteer-content').append(createNewElement(obj))
+        })
+
+        $('#volunteer_navbar li').each(function(index){
+          $(this).click(function(){
+            $('.volunteer-content-item').remove()
+            switch(index){
+              case 0:
+                all.forEach(function(obj){
+                  $('#volunteer-content').append(createNewElement(obj))
+                })
+                break
+              case 1:
+                domestic.forEach(function(obj){
+                  $('#volunteer-content').append(createNewElement(obj))
+                })
+                break
+              case 2:
+                foreign.forEach(function(obj){
+                  $('#volunteer-content').append(createNewElement(obj))
+                })
+                break
+            }
+          })
+        })
+      })
+
+
+      function createNewElement(obj) {
+        return `<div class="volunteer-content-item"><a href="#"><div class="volunteer-content-item-box"><img class="volunteer-content-item-thumbnail" src="${obj.image}" alt="" width="100%"><div class="volunteer-content-item-title">${obj.title}</div><div class="volunteer-content-item-content">${obj.description}</div></div></a></div>`
+      }
+    </script>
   </head>
   <body>
+    <div class="bg-video">
+      <video class="bg-video__content" autoplay muted loop>
+        <source src="../assets/vedio/video_sea.mp4" type="video/mp4"/>
+        Your browser is not supported!
+      </video>
+    </div>
+
     <nav id="navbar">
       <a href="./home.html">사이트 이름</a>
       <ul>
@@ -13,5 +194,18 @@
         <li><a href="./experience.html">체험하기</a></li>
       </ul>
     </nav>
+    
+    <h2>봉사활동</h2>
+
+    <nav id="volunteer_navbar">
+      <ul>
+        <li onclick="changedNavbarItem(0)" class="volunteer-nav-item">전체</li>
+        <li onclick="changedNavbarItem(1)" class="volunteer-nav-item">국내</li>
+        <li onclick="changedNavbarItem(2)" class="volunteer-nav-item">해외</li>
+      </ul>
+    </nav>
+
+    <div id="volunteer-content"></div>
+    
   </body>
 </html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('h1').each(function(index){
+        if(index%2!=0){
+          $(this).css('background-color','red')
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <h1>HeaderA</h1>
+  <h1>HeaderB</h1>
+  <h1>HeaderC</h1>
+  <h1>HeaderD</h1>
+</body>
+</html>
