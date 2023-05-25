@@ -1,29 +1,30 @@
-<html>
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
   <head>
-    <style>
-      .bg-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
-        opacity: 0.3;
-      }
-
-      .bg-video__content {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
-    </style>
+    <meta charset="utf-8">
+    <title>Draggable Image Slider | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="bg-video">
-      <video class="bg-video__content" autoplay muted loop>
-        <source src="../Week2/assets/vedio/snow.mp4" type="video/mp4" />
-        Your browser is not supported!
-      </video>
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <div class="carousel">
+        <img src="images/img-1.jpg" alt="img" draggable="false">
+        <img src="images/img-2.jpg" alt="img" draggable="false">
+        <img src="images/img-3.jpg" alt="img" draggable="false">
+        <img src="images/img-4.jpg" alt="img" draggable="false">
+        <img src="images/img-5.jpg" alt="img" draggable="false">
+        <img src="images/img-6.jpg" alt="img" draggable="false">
+        <img src="images/img-7.jpg" alt="img" draggable="false">
+        <img src="images/img-8.jpg" alt="img" draggable="false">
+        <img src="images/img-9.jpg" alt="img" draggable="false">
+      </div>
+      <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
+    
   </body>
 </html>

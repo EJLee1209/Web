@@ -3,24 +3,41 @@
   <head>
     <!-- nav bar style -->
     <link rel="stylesheet" type="text/css" href="../style/ySlider.css" />
-    <style>
-      body {
-        background-image: url('https://cdn.pixabay.com/photo/2016/11/08/04/49/jungle-1807476_1280.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      #navbar {
-        opacity: 0.5;
-      }
-    </style>
+    <link rel="stylesheet" href="../style/organizationDetail.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="../javascript/organizationDetail.js" defer></script>
   </head>
+  <style>
+    .page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 
   <body>
     <div id="wrap">
-      <div id="page1" class="page"></div>
-      <div class="page">02</div>
+      <div id="page1" class="page" style="background: #343F4F">
+        <div class="wrapper">
+          <i class="fa-solid fa-angle-left"></i>
+          <div class="carousel">
+            <img src="../assets/image/img-1.jpg" alt="">
+            <img src="../assets/image/img-2.jpg" alt="">
+            <img src="../assets/image/img-3.jpg" alt="">
+            <img src="../assets/image/img-4.jpg" alt="">
+            <img src="../assets/image/img-5.jpg" alt="">
+            <img src="../assets/image/img-6.jpg" alt="">
+            <img src="../assets/image/img-7.jpg" alt="">
+            <img src="../assets/image/img-8.jpg" alt="">
+            <img src="../assets/image/img-9.jpg" alt="">
+          </div>
+          <i class="fa-solid fa-angle-right"></i>
+        </div>
+      </div>
+      <div class="page" style="background: powderblue;">02</div>
       <div class="page" style="background: brown">03</div>
-      <div class="page" style="background: pink">04</div>
     </div>
 
     <script src="../javascript/home.js"></script>
