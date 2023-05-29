@@ -1,0 +1,40 @@
+<html>
+<head>
+  <!-- destination.html -->
+  <script>
+    // JavaScript로 쿼리 파라미터 값을 가져오는 함수
+    function getQueryParams() {
+      var params = {};
+      var url = window.location.href;
+      var queryString = url.split('?')[1];
+
+      if (queryString) {
+        var keyValuePairs = queryString.split('&');
+        for (var i = 0; i < keyValuePairs.length; i++) {
+          var keyValue = keyValuePairs[i].split('=');
+          var key = decodeURIComponent(keyValue[0]);
+          var value = decodeURIComponent(keyValue[1]);
+          params[key] = value;
+        }
+      }
+
+      return params;
+    }
+
+    // 페이지 로드 시 쿼리 파라미터 값을 가져와서 처리하는 예제
+    window.onload = function() {
+      var queryParams = getQueryParams();
+      var param1Value = queryParams['param1'];
+      var param2Value = queryParams['param2'];
+
+      // 가져온 값으로 필요한 작업 수행
+      // 예: 화면에 출력
+      console.log(param1Value);
+      console.log(param2Value);
+    }
+  </script>
+
+</head>
+<body>
+</body>
+</html>

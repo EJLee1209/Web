@@ -3,6 +3,14 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="../style/navStyle.css" />
     <link rel="stylesheet" type="text/css" href="../style/style.css" />
+    <style>
+      .draggable {
+          width: 200px;
+          height: 200px;
+          position: absolute;
+          cursor: move;
+      }
+  </style>
   </head>
   <body>
     <nav id="navbar">
@@ -13,5 +21,36 @@
         <li><a href="./experience.html">체험하기</a></li>
       </ul>
     </nav>
+
+    <div id="image" class="draggable">
+      <img src="../assets/image/icebear.jpg" alt="Image" width="100px" height="100px">
+    </div>
+
+    <script>
+        var draggableElement = document.getElementById('image');
+        var offsetX = 0;
+        var offsetY = 0;
+        var dragging = false;
+
+        // 마우스를 눌렀을 때 드래그 시작
+        draggableElement.addEventListener('mousedown', function(e) {
+            offsetX = e.clientX - draggableElement.offsetLeft;
+            offsetY = e.clientY - draggableElement.offsetTop;
+            dragging = true;
+        });
+
+        // 마우스를 뗐을 때 드래그 종료
+        draggableElement.addEventListener('mouseup', function() {
+            dragging = false;
+        });
+
+        // 마우스 이동 시 드래그 중인 경우 위치 업데이트
+        document.addEventListener('mousemove', function(e) {
+            if (dragging) {
+                draggableElement.style.left = (e.clientX - offsetX) + 'px';
+                draggableElement.style.top = (e.clientY - offsetY) + 'px';
+            }
+        });
+    </script>
   </body>
 </html>
