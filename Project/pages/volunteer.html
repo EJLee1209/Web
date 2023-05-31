@@ -5,63 +5,15 @@
     <link rel="stylesheet" type="text/css" href="../style/navStyle.css" />
     <link rel="stylesheet" type="text/css" href="../style/volunteerStyle.css" />
 
-    <script src="../javascript/volunteerData.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script>
-      var selectedMenuIndex = 0;
-      var selectedBoxIndex = 0;
-
-      $(document).ready(function () {
-        all.forEach(function (obj) {
-          $('#volunteer-content').append(createNewElement(obj));
-        });
-
-        $('#volunteer_navbar li').each(function (index) {
-          $(this).click(function () {
-            $('.volunteer-content-item').remove();
-            selectedMenuIndex = index;
-            switch (index) {
-              case 0:
-                all.forEach(function (obj) {
-                  $('#volunteer-content').append(createNewElement(obj));
-                });
-                break;
-              case 1:
-                sea.forEach(function (obj) {
-                  $('#volunteer-content').append(createNewElement(obj));
-                });
-                break;
-              case 2:
-                weather.forEach(function (obj) {
-                  $('#volunteer-content').append(createNewElement(obj));
-                });
-                break;
-            }
-          });
-        });
-      });
-
-      function createNewElement(obj) {
-        var boxIdx;
-        switch(selectedMenuIndex) {
-          case 0:
-            boxIdx = all.indexOf(obj)
-            break
-          case 1:
-            boxIdx = sea.indexOf(obj)
-            break
-          case 2: 
-            boxIdx = weather.indexOf(obj)
-            break 
-        }
-        return `<div class="volunteer-content-item"><a href="./volunteerDetail.html?menuIdx=${selectedMenuIndex}&selectedIdx=${boxIdx}"><div class="volunteer-content-item-box"><img class="volunteer-content-item-thumbnail" src="${obj.thumbnail}" alt="" width="100%"><div class="volunteer-content-item-title">${obj.title}</div><div class="volunteer-content-item-content">${obj.description}</div></div></a></div>`;
-      }
-    </script>
+    <script src="../javascript/volunteerData.js"></script>
+    <script src="../javascript/volunteer.js"></script>
+    
   </head>
   <body>
     <div class="bg-video">
       <video class="bg-video__content" autoplay muted loop>
-        <source src="../assets/vedio/video_sea.mp4" type="video/mp4" />
+        <source id="bg-source" src="../assets/vedio/video_sea.mp4" type="video/mp4" />
         Your browser is not supported!
       </video>
     </div>

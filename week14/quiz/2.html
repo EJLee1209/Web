@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+      $(document).ready(() => {
+        $('#btn').css({
+          backgroundColor: 'dodgerblue',
+          border: 0,
+          borderRadius: 10,
+          padding: '15 30 15 30',
+          color: 'white',
+        });
+        $('#btn').hover(function(){
+          $(this).css('backgroundColor', 'rgba(30, 143, 255, 0.617)');
+        }, function() {
+          $(this).css('backgroundColor', 'dodgerblue');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      /* 버튼 위에 마우스가 올라가면 반투명해지고, 마우스가 벗어나면
+      불투명해지는 버튼을 만드세요. */
+    </div>
+    <input id="btn" type="button" value="버튼" />
+  </body>
+</html>

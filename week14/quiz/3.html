@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+      colors = ['red', 'green', 'blue'];
+      var idx = 0;
+      $(document).ready(function () {
+        $('#btn').css({
+          backgroundColor: 'red',
+          border: 0,
+          borderRadius: 10,
+          padding: '15 30 15 30',
+          color: 'white',
+        });
+
+        $('#btn').on('click', function () {
+          idx = (idx+1)%colors.length
+          $(this).css('backgroundColor', colors[idx]);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      /* 버튼을 클릭할 때마다 색상이 빨간색, 녹색, 파란색으로 변경되도록
+      프로그램 하세요 */
+    </div>
+    <input id="btn" type="button" value="클릭" />
+  </body>
+</html>
+image.png
