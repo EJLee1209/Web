@@ -8,7 +8,7 @@
     <script src="../javascript/organizationData.js"></script>
     <script>
       $(document).ready(function () {
-        all.forEach(function (obj) {
+        organizations.forEach(function (obj) {
           $('#volunteer-content').append(createNewElement(obj));
         });
 
@@ -17,18 +17,22 @@
             $('.volunteer-content-item').remove();
             switch (index) {
               case 0:
-                all.forEach(function (obj) {
+              organizations.forEach(function (obj) {
                   $('#volunteer-content').append(createNewElement(obj));
                 });
                 break;
               case 1:
-                domestic.forEach(function (obj) {
-                  $('#volunteer-content').append(createNewElement(obj));
+              organizations.forEach(function (obj) {
+                  if (obj.type == 'domestic') {
+                    $('#volunteer-content').append(createNewElement(obj));
+                  }
                 });
                 break;
               case 2:
-                foreign.forEach(function (obj) {
-                  $('#volunteer-content').append(createNewElement(obj));
+              organizations.forEach(function (obj) {
+                  if (obj.type == 'foreign') {
+                    $('#volunteer-content').append(createNewElement(obj));
+                  }
                 });
                 break;
             }
@@ -37,7 +41,7 @@
       });
 
       function createNewElement(obj) {
-        return `<div class="volunteer-content-item"><a href="./organizationDetail.html"><div class="volunteer-content-item-box"><img class="volunteer-content-item-thumbnail" src="${obj.image}" alt="" width="100%"><div class="volunteer-content-item-title">${obj.title}</div><div class="volunteer-content-item-content">${obj.description}</div></div></a></div>`;
+        return `<div class="volunteer-content-item"><a href="./organizationDetail.html?selectedIdx=${organizations.indexOf(obj)}"><div class="volunteer-content-item-box"><img class="volunteer-content-item-thumbnail" src="${obj.thumbnail}" alt="" width="100%"><div class="volunteer-content-item-title">${obj.title}</div><div class="volunteer-content-item-content">${obj.description}</div></div></a></div>`;
       }
     </script>
   </head>

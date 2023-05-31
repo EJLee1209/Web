@@ -9,110 +9,24 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-    <script src="../javascript/organizationDetail.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="../javascript/organizationData.js"></script>
+    <script src="../javascript/organizationDetail.js"></script>
+    </script>
   </head>
-  <style>
-    .page {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    h2 {
-      font-size: 2rem;
-      color: white;
-    }
-    #description-box {
-      font-size: 1rem;
-      background-color: rgba(128, 128, 128, 0.51);
-      padding: 50px;
-    }
-    .bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.5;
-    }
-
-    .bg-video__content {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-    #last-content-box1 {
-      display: flex;
-      flex-direction: column;
-      font-size: 1rem;
-      text-align: start;
-      max-width: 400px;
-    }
-    #last-content-box2 {
-      display: flex;
-      flex-direction: column;
-      font-size: 1rem;
-      background-color: white;
-      border-radius: 10px;
-      padding: 50px;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    }
-    #last-content-box2 a {
-      display: inline-block;
-      text-decoration: none;
-      color: white;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 1px;
-      font-size: 14px;
-      padding-top: 10px;padding-bottom: 10px;
-      border-radius: 50px;
-      border: 1px solid transparent;
-      transition: all 0.3s ease-in-out;
-      width: 100%;
-      text-align: center;
-      background : #82CD47;
-    }
-    #last-content-box2 a:hover {
-      border-color: #5465b3;
-      color: #5465b3;
-      background: transparent !important;
-    }
-
-    input {
-      padding: 10px;
-      border-radius: 12px;
-      border-width: 1px;
-      margin-bottom: 10px;
-    }
-  </style>
-
   <body>
     <div id="wrap">
       <div id="page1" class="page" style="background: #343f4fd7">
         <div class="wrapper">
           <i class="fa-solid fa-angle-left"></i>
-          <div class="carousel">
-            <img src="../assets/image/img-1.jpg" alt="" />
-            <img src="../assets/image/img-2.jpg" alt="" />
-            <img src="../assets/image/img-3.jpg" alt="" />
-            <img src="../assets/image/img-4.jpg" alt="" />
-            <img src="../assets/image/img-5.jpg" alt="" />
-            <img src="../assets/image/img-6.jpg" alt="" />
-            <img src="../assets/image/img-7.jpg" alt="" />
-            <img src="../assets/image/img-8.jpg" alt="" />
-            <img src="../assets/image/img-9.jpg" alt="" />
-          </div>
+          <div id="imageContainer" class="carousel"></div>
           <i class="fa-solid fa-angle-right"></i>
         </div>
       </div>
       <div class="page">
         <div class="bg-video">
           <video class="bg-video__content" autoplay muted loop>
-            <source src="../assets/vedio/video_sea.mp4" type="video/mp4" />
+            <source src="../assets/vedio/sky.mp4" type="video/mp4" />
             Your browser is not supported!
           </video>
         </div>
@@ -124,21 +38,24 @@
           assumenda.
         </div>
       </div>
-      <div class="page" style="flex-direction: row; background-color: #379237d1;">
+      <div
+        class="page"
+        style="flex-direction: row; background-color: #379237d1"
+      >
         <div id="last-content-box1">
           <h2>후원으로 시작하세요!</h2>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
-          asperiores quisquam possimus nisi, tempore debitis odio tenetur?
-          Ipsam, quam. Porro, asperiores molestias praesentium iusto veniam
-          ducimus ipsa! Illo, voluptatum quos!
+          <div id="donateDescription">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+            asperiores quisquam possimus nisi, tempore debitis odio tenetur?
+            Ipsam, quam. Porro, asperiores molestias praesentium iusto veniam
+            ducimus ipsa! Illo, voluptatum quos!
+          </div>
         </div>
         <div id="last-content-box2">
-          <input type="text" placeholder="후원금액 입력">
-          <a href="./volunteer.html">후원하기</a>
+          <input type="text" placeholder="후원금액 입력" />
+          <a id="donateBtn" href="./volunteer.html">후원하기</a>
         </div>
       </div>
     </div>
-
-    <script src="../javascript/home.js"></script>
   </body>
 </html>
